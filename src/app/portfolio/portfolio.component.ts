@@ -78,23 +78,23 @@ export class PortfolioComponent {
       imageUrl: 'assets/img/pop-ups/el_pollo_loco_pop_up.svg',
       modalImageUrl: 'assets/img/pop-ups/modal_loco.svg',
     },
-    {
-      id: 3,
-      title: 'DABubble',
-      subtitle: {
-        EN: 'What is this project about?',
-        DE: 'Worum geht es bei diesem Projekt?',
-      },
-      description: {
-        EN: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-        DE: 'Diese App ist eine Slack-Clone-App. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit einer intuitiven Benutzeroberfläche, Echtzeitnachrichten und robuster Kanalorganisation.',
-      },
-      technologies: ['Angular', 'Firebase', 'TypeScript'],
-      githubLink: '#',
-      liveLink: '#',
-      imageUrl: 'assets/img/pop-ups/da_bubble_pop_up.svg',
-      modalImageUrl: 'assets/img/pop-ups/modal_bubble.svg',
-    },
+    // {
+    //   id: 3,
+    //   title: 'DABubble',
+    //   subtitle: {
+    //     EN: 'What is this project about?',
+    //     DE: 'Worum geht es bei diesem Projekt?',
+    //   },
+    //   description: {
+    //     EN: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    //     DE: 'Diese App ist eine Slack-Clone-App. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit einer intuitiven Benutzeroberfläche, Echtzeitnachrichten und robuster Kanalorganisation.',
+    //   },
+    //   technologies: ['Angular', 'Firebase', 'TypeScript'],
+    //   githubLink: '#',
+    //   liveLink: '#',
+    //   imageUrl: 'assets/img/pop-ups/da_bubble_pop_up.svg',
+    //   modalImageUrl: 'assets/img/pop-ups/modal_bubble.svg',
+    // },
   ];
 
   constructor(private languageService: LanguageService) { }
