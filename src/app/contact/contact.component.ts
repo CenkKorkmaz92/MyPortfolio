@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LanguageService } from '../language.service';
+import { DialogService } from '../shared/dialog.service'; // Import the DialogService
 
 @Component({
   selector: 'app-contact',
@@ -68,22 +69,16 @@ export class ContactComponent {
     },
   };
 
-  // =============== New additions from your new code ===============
-  // Use Angular's "inject" function or the constructor injection—either is fine:
-  http = inject(HttpClient);
-
-  // For template-driven form fields
+  // =============== New additions ===============
+  http = inject(HttpClient); // Angular's "inject" function
   contactData = {
     name: '',
     email: '',
     message: '',
   };
-
-  // For the privacy checkbox
   acceptTerms = false;
-
-  // Toggle: true = test mode (no real HTTP post), false = live
   mailTest = false;
+  showSuccessPopup = false;
 
   post = {
     endPoint: 'https://cenk-korkmaz.com/sendMail.php',
@@ -96,7 +91,10 @@ export class ContactComponent {
     },
   };
 
-  constructor(private languageService: LanguageService) { }
+  constructor(
+    private languageService: LanguageService,
+    private dialogService: DialogService // Inject the DialogService
+  ) {}
 
   ngOnInit(): void {
     this.languageService.language$.subscribe((lang) => {
@@ -108,11 +106,8 @@ export class ContactComponent {
     this.languageService.setLanguage(language);
   }
 
-  showSuccessPopup = false;
-
   onSubmit(contactForm: NgForm) {
     if (contactForm.submitted && contactForm.form.valid && !this.mailTest) {
-      // Senden der tatsächlichen Anfrage
       this.http
         .post(
           this.post.endPoint,
@@ -123,7 +118,7 @@ export class ContactComponent {
           next: (response) => {
             console.log('Response', response);
             contactForm.resetForm();
-            this.displaySuccessPopup(); // Pop-up anzeigen
+            this.displaySuccessPopup();
           },
           error: (error) => {
             console.error(error);
@@ -133,17 +128,21 @@ export class ContactComponent {
     } else if (contactForm.submitted && contactForm.form.valid && this.mailTest) {
       console.log('mailTest=true. Skipping request. Resetting form...');
       contactForm.resetForm();
-      this.displaySuccessPopup(); // Pop-up auch im Testmodus anzeigen
+      this.displaySuccessPopup();
     } else {
       console.log('Form is invalid or not yet submitted');
     }
   }
 
-  // Funktion zum Anzeigen des Pop-ups
   displaySuccessPopup() {
-    this.showSuccessPopup = true; // Pop-up aktivieren
+    this.showSuccessPopup = true;
     setTimeout(() => {
-      this.showSuccessPopup = false; // Nach 3 Sekunden deaktivieren
+      this.showSuccessPopup = false;
     }, 3000);
+  }
+
+  // New method to open the Data Protection dialog via the DialogService
+  openDataProtection() {
+    this.dialogService.openDataProtection();
   }
 }
