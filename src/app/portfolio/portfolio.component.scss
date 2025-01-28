@@ -10,9 +10,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding-left: 300px;
-    width: 1000px;
-    height: 565px;
+    width: 1000px !important;
+    height: 565px !important;
 }
 
 .portfolio-headline {
@@ -121,6 +120,20 @@ h1 {
         opacity: 1;
     }
 }
+
+@media (max-width: 2560px) {
+    .portfolio-container {
+        padding-left: 604px !important;
+    }
+}
+
+@media (max-width: 1920px) {
+    .portfolio-container {
+        padding-left: 340px !important;
+    }
+}
+
+
 
 @media (max-width: 1441px) {
     .portfolio-container {

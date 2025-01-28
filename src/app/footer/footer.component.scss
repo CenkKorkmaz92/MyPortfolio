@@ -14,7 +14,6 @@
     padding-top: 144px;
     padding-bottom: 44px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -65,7 +64,7 @@
         &:hover {
             cursor: pointer;
             color: rgba(61, 207, 182, 1);
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
         }
 
@@ -146,6 +145,18 @@
 
     50% {
         transform: translateY(5px);
+    }
+}
+
+@media (max-width: 2560px) {
+    .footer-section {
+        justify-content: space-around !important;
+    }
+}
+
+@media (max-width: 1920px) {
+    .footer-section {
+        justify-content: space-between !important;
     }
 }
 
