@@ -198,7 +198,7 @@
         flex-grow: 1;
         text-align: center;
         gap: 12px;
-        padding-top: 218px;
+        padding-top: 100px;
 
         p {
             margin: 0;
@@ -347,6 +347,7 @@
     .bottom-section-hero-component {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
 
         .scroll-icon {
             display: flex;
@@ -412,6 +413,16 @@
                 }
             }
         }
+    }
+
+    .left-vector {
+        height: 240px;
+        border: solid 1px rgba(61, 207, 182, 1);
+    }
+
+    .right-vector {
+        height: 186px;
+        border: solid 1px white;
     }
 
     .scroll-arrow-container {
@@ -516,6 +527,13 @@
     }
 }
 
+@media (max-width: 845px) {
+    .name {
+        font-size: 100px !important;
+        line-height: 100px !important;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-left-content {
         display: none !important;
@@ -580,6 +598,14 @@
     }
 
     .hero-marquee {
-        top: 790px;
+        top: 597px;
+    }
+
+    .left-vector {
+        height: 224px !important;
+    }
+
+    .right-vector {
+        height: 112px !important;
     }
 }

@@ -333,13 +333,14 @@ h2 {
 /* Highlight invalid inputs and textareas in red */
 .single-input-frame input.ng-invalid.ng-touched,
 .single-input-frame textarea.ng-invalid.ng-touched {
-  color: #ff4b4b !important; /* Same color as your .error-text */
+    color: #ff4b4b !important;
+    /* Same color as your .error-text */
 }
 
 /* Make the placeholder text red when invalid */
 .single-input-frame input.ng-invalid.ng-touched::placeholder,
 .single-input-frame textarea.ng-invalid.ng-touched::placeholder {
-  color: #ff4b4b !important;
+    color: #ff4b4b !important;
 }
 
 
@@ -366,6 +367,12 @@ h2 {
 
     .checkbox-area {
         width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding-top: 100px !important;
     }
 }
 

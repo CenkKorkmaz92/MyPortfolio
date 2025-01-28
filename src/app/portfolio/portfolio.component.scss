@@ -177,7 +177,7 @@ h1 {
 @media (max-width: 768px) {
 
     .portfolio {
-        padding-top: 240px !important;
+        padding-top: 100px !important;
     }
 
     .projects-container {
@@ -191,9 +191,9 @@ h1 {
 }
 
 @media (max-width: 480px) {
-    .portfolio {
-        padding-top: 280px !important;
-    }
+    // .portfolio {
+    //     padding-top: 280px !important;
+    // }
 
     .projects-container {
         flex-direction: column !important;
