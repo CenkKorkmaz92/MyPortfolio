@@ -10,8 +10,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding-left: 96px;
-    width: 880px;
+    padding-left: 300px;
+    width: 1000px;
     height: 565px;
 }
 
@@ -122,6 +122,13 @@ h1 {
     }
 }
 
+@media (max-width: 1441px) {
+    .portfolio-container {
+        padding-left: 133px !important;
+        width: 940px !important;
+    }
+
+}
 
 @media (max-width: 1300px) {
     .portfolio-container {
@@ -208,7 +215,7 @@ h1 {
         padding-left: 0 !important;
 
         h1 {
-            font-size: 56px !important;
+            font-size: 38px !important;
         }
     }
 
