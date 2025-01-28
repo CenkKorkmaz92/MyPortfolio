@@ -121,6 +121,12 @@ h1 {
     }
 }
 
+@media (max-width: 3820px) {
+    .portfolio-container {
+        padding-left: 1230px !important;
+    }
+}
+
 @media (max-width: 2560px) {
     .portfolio-container {
         padding-left: 604px !important;

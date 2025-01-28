@@ -509,6 +509,19 @@
     }
 }
 
+@media (max-width: 3820px) {
+    .scroll-icon {
+        margin-left: 1200px !important;
+    }
+    .social-links {
+        padding-right: 1220px !important;
+    }
+
+    .navbar {
+        justify-content: space-evenly !important;
+    }
+}
+
 @media (max-width: 2560px) {
     .scroll-icon {
         margin-left: 600px !important;
