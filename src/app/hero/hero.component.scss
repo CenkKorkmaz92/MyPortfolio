@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
     background-image: url('../../assets/img/backgrounds/background_first_section.svg');
     background-size: cover;
@@ -20,6 +21,8 @@
         justify-content: space-between;
         align-items: center;
         height: 98px;
+        max-width: 1440px;
+        width: 100%;
 
         .logo {
             font-family: 'Karla', sans-serif;
@@ -301,7 +304,7 @@
     }
 
     .hero-marquee {
-        position: absolute;
+        max-width: 2560px;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -348,6 +351,8 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        max-width: 1440px;
+        width: 100%;
 
         .scroll-icon {
             display: flex;
@@ -384,8 +389,8 @@
                     color: white;
 
                     &:hover {
-                            color: rgba(61, 207, 182, 1);
-                            cursor: pointer;
+                        color: rgba(61, 207, 182, 1);
+                        cursor: pointer;
                     }
                 }
 
@@ -495,7 +500,8 @@
             display: none;
         }
 
-        img, .mail-button {
+        img,
+        .mail-button {
             width: 32px !important;
             height: auto !important;
             display: block !important;
@@ -511,50 +517,13 @@
     }
 }
 
-@media (max-width: 3820px) {
-    .scroll-icon {
-        margin-left: 1200px !important;
-    }
-    .social-links {
-        padding-right: 1220px !important;
-    }
-
-    .navbar {
-        justify-content: space-evenly !important;
-    }
-}
-
-@media (max-width: 2560px) {
-    .scroll-icon {
-        margin-left: 600px !important;
-    }
-    .social-links {
-        padding-right: 600px !important;
-    }
-
-    .navbar {
-        justify-content: space-around !important;
-    }
-}
-
 @media (max-width: 1920px) {
-    .scroll-icon {
-        margin-left: 124px !important;
-    }
-    .social-links {
-        padding-right: 124px !important;
-    }
-
     .navbar {
         justify-content: space-between !important;
     }
 }
 
 @media (max-width: 1024px) {
-    .hero-content {
-        padding-top: 118px !important;
-    }
-
     .hero-marquee {
         padding: 0px 8px !important;
     }
