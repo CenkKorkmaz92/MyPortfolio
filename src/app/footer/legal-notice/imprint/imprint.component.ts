@@ -17,24 +17,29 @@ export class ImprintComponent implements OnInit {
       heading1: 'Imprint',
       heading2: 'Information acc. to § 5 TMG',
       block2: `
-        <p>
-          Philipp Schönborn<br>
-          Baumschulenring 26<br>
-          72202 Nagold
+       <p>
+       Cenk Korkmaz<br>
+          Kleinhöchbergerstraße 45<br>
+          71560 Sulzbach an der Murr
         </p>
       `,
       heading3: 'Contact',
       block3: `
         <p>
-          Phone: +49 (0) 176 306 785 30<br>
+          Phone: +49 (0) 173 437 605 7<br>
           Email:
-          <a href="mailto:philipp@schoenborn-home.de">
-            philipp&#64;schoenborn-home.de
+          <a href="mailto:Cenk.Korkmaz92@gmail.com">
+            Cenk.Korkmaz92&#64;gmail.com
           </a>
         </p>
       `,
       heading4: 'Editorially Responsible',
       block4: `
+      <p>
+       Cenk Korkmaz<br>
+          Kleinhöchbergerstraße 45<br>
+          71560 Sulzbach an der Murr
+        </p>
         <p>
           Philipp Schönborn<br>
           Baumschulenring 26<br>
@@ -57,23 +62,28 @@ export class ImprintComponent implements OnInit {
       heading2: 'Angaben gemäß § 5 TMG',
       block2: `
         <p>
-          Philipp Schönborn<br>
-          Baumschulenring 26<br>
-          72202 Nagold
+       Cenk Korkmaz<br>
+          Kleinhöchbergerstraße 45<br>
+          71560 Sulzbach an der Murr
         </p>
       `,
       heading3: 'Kontakt',
       block3: `
         <p>
-          Telefon: +49 (0) 176 306 785 30<br>
-          E-Mail:
-          <a href="mailto:philipp@schoenborn-home.de">
-            philipp&#64;schoenborn-home.de
+          Phone: +49 (0) 173 437 605 7<br>
+          Email:
+          <a href="mailto:Cenk.Korkmaz92@gmail.com">
+            Cenk.Korkmaz92&#64;gmail.com
           </a>
         </p>
       `,
       heading4: 'Redaktionell verantwortlich',
       block4: `
+      <p>
+       Cenk Korkmaz<br>
+          Kleinhöchbergerstraße 45<br>
+          71560 Sulzbach an der Murr
+        </p>
         <p>
           Philipp Schönborn<br>
           Baumschulenring 26<br>
@@ -93,7 +103,7 @@ export class ImprintComponent implements OnInit {
     },
   };
 
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
     // Subscribe so we know when the user changes the language

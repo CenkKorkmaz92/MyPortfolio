@@ -18,7 +18,7 @@ export class DataProtectionComponent implements AfterViewInit{
       heading1: 'Privacy Policy',
       block1: `
         <p>The controller within the meaning of data protection laws, in particular the EU General Data Protection Regulation (GDPR), is:</p>
-        <p>Philipp Schönborn</p>
+        <p>Cenk Korkmaz</p>
       `,
       heading2: 'Your Data Subject Rights',
       block2: `
@@ -99,7 +99,7 @@ export class DataProtectionComponent implements AfterViewInit{
       `,
       subheading9_2: 'Recipient of an Objection',
       block9_2: `
-        <p>Philipp Schönborn</p>
+        <p>Cenk Korkmaz</p>
       `,
       heading10: 'Changes to Our Privacy Policy',
       block10: `
@@ -118,7 +118,7 @@ export class DataProtectionComponent implements AfterViewInit{
       heading1: 'Datenschutzerklärung',
       block1: `
         <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
-        <p>Philipp Schönborn</p>
+        <p>Cenk Korkmaz</p>
       `,
       heading2: 'Ihre Betroffenenrechte',
       block2: `
@@ -196,7 +196,7 @@ export class DataProtectionComponent implements AfterViewInit{
   `,
       subheading9_2: 'Empfänger eines Widerspruchs',
       block9_2: `
-    <p>Philipp Schönborn</p>
+    <p>Cenk Korkmaz</p>
   `,
       heading10: 'Änderung unserer Datenschutzbestimmungen',
       block10: `
@@ -225,7 +225,6 @@ export class DataProtectionComponent implements AfterViewInit{
   }
 
   ngOnInit(): void {
-    // Subscribe so we know when the user changes the language in Hero
     this.languageService.language$.subscribe(lang => {
       this.selectedLanguage = lang;
     });
