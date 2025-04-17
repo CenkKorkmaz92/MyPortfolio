@@ -32,6 +32,14 @@
     }
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-pointer:hover {
+    color: #3dcfb6;
+}
+
 .info {
     display: flex;
     flex-direction: column;
