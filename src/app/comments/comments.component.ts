@@ -19,26 +19,26 @@ export class CommentsComponent {
   testimonials: Testimonial[] = [
     {
       quote: {
-        EN: "Our project benefited enormously from Cenk’s efficient way of working.",
-        DE: "Unser Projekt profitierte enorm von Cenks effizienter Arbeitsweise.",
+        EN: "Our project benefited enormously from Philipp’s efficient way of working.",
+        DE: "Unser Projekt profitierte enorm von Philipps effizienter Arbeitsweise.",
       },
       author: "D. Laubig",
       role: "Frontend Developer",
     },
     {
       quote: {
-        EN: "Cenk has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
-        DE: "Cenk hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
+        EN: "Philipp has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
+        DE: "Philipp hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
       },
-      author: "P. Mehr",
+      author: "C. Korkmaz",
       role: "Frontend Developer",
     },
     {
       quote: {
-        EN: "I had the good fortune of working with Cenk in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
-        DE: "Ich hatte das Glück, mit Cenk an einem Gruppenprojekt bei der Developer Akademie zu arbeiten, das viel Einsatz erforderte. Er blieb immer ruhig, konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist äußerst kompetent, es ist leicht mit ihm zu arbeiten und ich würde jederzeit wieder mit ihm arbeiten.",
+        EN: "I had the good fortune of working with Philipp in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
+        DE: "Ich hatte das Glück, mit Philipp an einem Gruppenprojekt bei der Developer Akademie zu arbeiten, das viel Einsatz erforderte. Er blieb immer ruhig, konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist äußerst kompetent, es ist leicht mit ihm zu arbeiten und ich würde jederzeit wieder mit ihm arbeiten.",
       },
-      author: "P. Schoenborn",
+      author: "B. Scheiber",
       role: "Frontend Developer",
     },
   ];
@@ -65,6 +65,12 @@ export class CommentsComponent {
       this.testimonials[nextIndex],
     ];
   }
+
+  transition = 'transform 0.5s ease'; // du kannst es auch per SCSS machen
+
+getTransform(): string {
+  return `translateX(-${this.currentIndex * 100}%)`;
+}
 
   nextSlide(): void {
     this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;

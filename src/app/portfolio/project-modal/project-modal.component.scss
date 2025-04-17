@@ -339,7 +339,7 @@ $modal-bg-image: "../../../assets/img/backgrounds/background_first_section.svg";
   }
 
   .project-img{
-    width: 400px !important;
+    width: 240px !important;
     height: auto !important;
   }
 
@@ -376,15 +376,15 @@ $modal-bg-image: "../../../assets/img/backgrounds/background_first_section.svg";
   }
 
   .project-img{
-    width: 240px !important;
-  }
-
-  .modal-body {
-    gap: 8px !important;
+    width: 300px !important;
   }
 }
 
 @media (max-width: 390px) {
+  .modal-content {
+    padding: 12px !important;
+  }
+
   .project-img{
     width: 280px !important;
   }

@@ -5,6 +5,7 @@
     color: white;
     padding-top: 144px;
     width: 100%;
+    gap: 60px;
 }
 
 .left-contact-form {
@@ -86,7 +87,6 @@
     label {
         pointer-events: none;
     }
-
     span {
         pointer-events: visible;
     }
@@ -332,22 +332,20 @@ h2 {
 /* Highlight invalid inputs and textareas in red */
 .single-input-frame input.ng-invalid.ng-touched,
 .single-input-frame textarea.ng-invalid.ng-touched {
-    color: #ff4b4b !important;
-    /* Same color as your .error-text */
+  color: #ff4b4b !important; /* Same color as your .error-text */
 }
 
 /* Make the placeholder text red when invalid */
 .single-input-frame input.ng-invalid.ng-touched::placeholder,
 .single-input-frame textarea.ng-invalid.ng-touched::placeholder {
-    color: #ff4b4b !important;
+  color: #ff4b4b !important;
 }
 
-@media (max-width: 3820px) {
+@media (max-width: 9000px) {
     .contact {
         gap: 190px !important;
     }
 }
-
 @media (max-width: 1920px) {
     .contact {
         gap: 60px !important;

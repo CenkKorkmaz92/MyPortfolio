@@ -23,8 +23,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./legal-notice.component.scss']
 })
 export class LegalNoticeComponent implements OnInit, OnDestroy {
-  private subscription!: Subscription;
 
+  private subscription!: Subscription;
+  
   constructor(private dialog: MatDialog, private dialogService: DialogService) {}
 
   ngOnInit() {
@@ -33,7 +34,6 @@ export class LegalNoticeComponent implements OnInit, OnDestroy {
       this.openDataProtection(); // Call the existing method to open the dialog
     });
   }
-
   ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe(); // Clean up subscription when the component is destroyed

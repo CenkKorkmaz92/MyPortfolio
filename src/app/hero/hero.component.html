@@ -42,13 +42,13 @@
       <div class="burger-dropdown" *ngIf="menuOpen">
         <ul>
           <li>
-            <a href="#about">{{ translations[selectedLanguage].NAV1 }}</a>
+            <a href="#about" (click)="navigate('about')">{{ translations[selectedLanguage].NAV1 }}</a>
           </li>
           <li>
-            <a href="#projects">{{ translations[selectedLanguage].NAV2 }}</a>
+            <a href="#projects" (click)="navigate('projects')">{{ translations[selectedLanguage].NAV2 }}</a>
           </li>
           <li>
-            <a href="#contact">{{ translations[selectedLanguage].NAV3 }}</a>
+            <a href="#contact" (click)="navigate('contact')">{{ translations[selectedLanguage].NAV3 }}</a>
           </li>
         </ul>
         <div class="language-switch">
@@ -63,6 +63,8 @@
         </div>
       </div>
     </nav>
+
+    <div class="overlay" *ngIf="menuOpen" (click)="menuOpen = false"></div>
   
     <!-- HERO CONTENT -->
     <div class="hero-content">
@@ -85,38 +87,52 @@
           <div class="scroll-arrow"></div>
         </div>
         <div class="left-vector"></div>
+        <!-- <img src="../../assets/img/icons/vector_color_left_side.svg" alt="Left vector icon" /> -->
       </div>
       <div class="social-links">
         <div class="rotated-mail">
-          <a class="text-mail" href="#contact">Cenk.Korkmaz&#64;gmail.com</a>
+          <a href="#contact">Cenk.Korkmaz92&#64;gmail.com</a>
           <div class="icon-wrapper">
-            <a class="mail-button" href="#contact">
-              <img src="../../assets/img/icons/mail_icon_default.svg" alt="Email Icon" class="social-icon mail" />
-            </a>
+            <a href="#contact" class="mail-button"><img src="../../assets/img/icons/mail_icon_default.svg" alt="Email Icon" class="social-icon mail"/></a>
           </div>
         </div>
         <a href="https://github.com/CenkKorkmaz92" target="_blank" class="social-icon github">
           <img src="../../assets/img/icons/github_icon_default.svg" alt="GitHub Icon" />
         </a>
-        <a href="https://www.linkedin.com/in/cenk-korkmaz-2731072a5/" target="_blank" class="social-icon linkedin">
+        <a href="https://www.linkedin.com/in/cenk-korkmaz-2731072a5" target="_blank" class="social-icon linkedin">
           <img src="../../assets/img/icons/linkedin_icon_default.svg" alt="LinkedIn Icon" />
         </a>
         <div class="right-vector"></div>
+        <!-- <img src="../../assets/img/icons/vector_grey_right_side.svg" alt="Right vector icon" /> -->
       </div>
     </div>
   
     <!-- MARQUEE -->
     <div class="hero-marquee">
-      <div>
-        <p>•</p>
-        <p>{{ translations[selectedLanguage].MARQUEE1 }}</p>
-        <p>•</p>
-        <p>{{ translations[selectedLanguage].MARQUEE2 }}</p>
-        <p>•</p>
-        <p>{{ translations[selectedLanguage].MARQUEE3 }}</p>
-        <p>•</p>
-        <p>{{ translations[selectedLanguage].MARQUEE4 }}</p>
-        <p>•</p>
+      <div class="marquee-track">
+        <!-- Erste Kopie -->
+        <div class="marquee-content">
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE1 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE2 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE3 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE4 }}</p>
+          <p>•</p>
+        </div>
+        <!-- Zweite Kopie -->
+        <div class="marquee-content">
+          <p>{{ translations[selectedLanguage].MARQUEE1 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE2 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE3 }}</p>
+          <p>•</p>
+          <p>{{ translations[selectedLanguage].MARQUEE4 }}</p>
+          <p>•</p>
+        </div>
       </div>
     </div>
   </section>

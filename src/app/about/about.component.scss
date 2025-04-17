@@ -10,7 +10,7 @@
         display: flex;
         justify-content: space-between;
         height: 708px;
-        padding-top: 144px;
+        padding-top: 60px;
         padding-right: 51px;
     }
 
@@ -103,7 +103,8 @@
     }
 }
 
-@media (max-width: 3820px) {
+
+@media (max-width: 9000px) {
     .about-me {
         width: 1374px !important;
     }
@@ -138,7 +139,7 @@
     }
 
     .profile-picture-bg.visible {
-        padding-right: 46px;
+       padding-right: 46px;
     }
 
 
@@ -180,7 +181,7 @@
 
     .icons-with-text-container span {
         height: auto;
-        white-space: normal !important;
+        white-space: normal !important; 
     }
 }
 
@@ -203,12 +204,12 @@
         padding-top: 40px !important;
     }
 
-    .headline-about-me {
+    .headline-about-me{
         font-size: 42px !important;
     }
 
 
-    .icons-with-text-main-container {
+    .icons-with-text-main-container{
         height: auto !important;
     }
 }
@@ -217,8 +218,8 @@
     .profile-picture-bg.visible {
         width: 280px !important;
         height: 280px !important;
-    }
-
+    } 
+    
     .profile-picture {
         width: 280px !important;
         height: 280px !important;

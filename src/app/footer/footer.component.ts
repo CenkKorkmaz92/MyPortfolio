@@ -10,6 +10,7 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+
   scrollToHero() {
     const heroElement = document.getElementById('hero'); // Find the navbar with id "hero"
     if (heroElement) {
@@ -18,4 +19,5 @@ export class FooterComponent {
       console.warn('Hero element not found!');
     }
   }
+  
 }

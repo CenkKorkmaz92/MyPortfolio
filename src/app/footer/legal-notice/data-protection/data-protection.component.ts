@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { LanguageService } from '../../../language.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-data-protection',
@@ -9,7 +10,7 @@ import { LanguageService } from '../../../language.service';
   templateUrl: './data-protection.component.html',
   styleUrls: ['./data-protection.component.scss']
 })
-export class DataProtectionComponent {
+export class DataProtectionComponent implements AfterViewInit{
   selectedLanguage: 'EN' | 'DE' = 'EN';
 
   translations = {
@@ -17,7 +18,7 @@ export class DataProtectionComponent {
       heading1: 'Privacy Policy',
       block1: `
         <p>The controller within the meaning of data protection laws, in particular the EU General Data Protection Regulation (GDPR), is:</p>
-        <p>Cenk Korkmaz</p>
+        <p>Philipp Schönborn</p>
       `,
       heading2: 'Your Data Subject Rights',
       block2: `
@@ -98,7 +99,7 @@ export class DataProtectionComponent {
       `,
       subheading9_2: 'Recipient of an Objection',
       block9_2: `
-        <p>Cenk Korkmaz</p>
+        <p>Philipp Schönborn</p>
       `,
       heading10: 'Changes to Our Privacy Policy',
       block10: `
@@ -117,7 +118,7 @@ export class DataProtectionComponent {
       heading1: 'Datenschutzerklärung',
       block1: `
         <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
-        <p>Cenk Korkmaz</p>
+        <p>Philipp Schönborn</p>
       `,
       heading2: 'Ihre Betroffenenrechte',
       block2: `
@@ -195,7 +196,7 @@ export class DataProtectionComponent {
   `,
       subheading9_2: 'Empfänger eines Widerspruchs',
       block9_2: `
-    <p>Cenk Korkmaz</p>
+    <p>Philipp Schönborn</p>
   `,
       heading10: 'Änderung unserer Datenschutzbestimmungen',
       block10: `
@@ -211,7 +212,17 @@ export class DataProtectionComponent {
     }
   };
 
-  constructor(private languageService: LanguageService) { }
+  constructor(
+    private languageService: LanguageService,
+    public dialogRef: MatDialogRef<DataProtectionComponent>
+  ) { }
+
+  ngAfterViewInit(): void {
+    const element = document.getElementById('top');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   ngOnInit(): void {
     // Subscribe so we know when the user changes the language in Hero
@@ -219,8 +230,7 @@ export class DataProtectionComponent {
       this.selectedLanguage = lang;
     });
   }
-
-  // This is optional if you have separate language buttons in About
+  
   setLanguage(language: 'EN' | 'DE') {
     this.languageService.setLanguage(language);
   }

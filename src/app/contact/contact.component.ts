@@ -71,17 +71,23 @@ export class ContactComponent {
 
   // =============== New additions ===============
   http = inject(HttpClient); // Angular's "inject" function
+
+  // For template-driven form fields
   contactData = {
     name: '',
     email: '',
     message: '',
   };
+
+  // For the privacy checkbox
   acceptTerms = false;
+
+  // Toggle: true = test mode (no real HTTP post), false = live
   mailTest = false;
   showSuccessPopup = false;
 
   post = {
-    endPoint: 'https://cenk-korkmaz.com/sendMail.php',
+    endPoint: 'https://philipp-schoenborn.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -93,7 +99,7 @@ export class ContactComponent {
 
   constructor(
     private languageService: LanguageService,
-    private dialogService: DialogService // Inject the DialogService
+    private dialogService: DialogService
   ) {}
 
   ngOnInit(): void {
@@ -134,6 +140,7 @@ export class ContactComponent {
     }
   }
 
+
   displaySuccessPopup() {
     this.showSuccessPopup = true;
     setTimeout(() => {
@@ -145,4 +152,5 @@ export class ContactComponent {
   openDataProtection() {
     this.dialogService.openDataProtection();
   }
+
 }
