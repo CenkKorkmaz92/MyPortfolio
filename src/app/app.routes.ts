@@ -6,6 +6,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { LegalNoticeComponent } from './footer/legal-notice/legal-notice.component';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'comments', component: CommentsComponent }, // Route for CommentsComponent
   { path: 'contact', component: ContactComponent }, // Route for ContactComponent
   { path: 'footer', component: FooterComponent }, // Route for FooterComponent
+  { path: 'legal-notice', component: LegalNoticeComponent }, // Route for LegalNoticeComponent
   { path: '**', redirectTo: '' }                // Wildcard route for undefined paths
 ];
 
