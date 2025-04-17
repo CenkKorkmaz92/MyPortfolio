@@ -8,190 +8,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 0;
     margin: 0;
     color: white;
     overflow: hidden;
     align-items: center;
-
-    .navbar {
-        /* Position relative so .burger-dropdown can be absolutely positioned */
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 98px;
-        width: 100%;
-        max-width: 1440px;
-
-        .logo {
-            font-family: 'Karla', sans-serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding-right: 96px;
-        }
-
-        .nav-links {
-            font-family: 'Fira Code', sans-serif;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26.24px;
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            gap: 24px;
-            width: 409px;
-            height: 28px;
-
-            li {
-                position: relative;
-
-                a {
-                    text-decoration: none;
-                    color: white;
-                    transition: color 0.3s;
-                    cursor: pointer;
-
-                    &:hover {
-                        color: rgba(61, 207, 182, 1);
-                    }
-                }
-
-                &.active a {
-                    color: rgba(61, 207, 182, 1);
-                }
-
-                &:hover::after {
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    bottom: -5px;
-                    transform: translateX(-50%);
-                    width: 6px;
-                    height: 6px;
-                    background-color: rgba(61, 207, 182, 1);
-                    border-radius: 50%;
-                }
-
-                &.active::after {
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    bottom: -5px;
-                    transform: translateX(-50%);
-                    width: 6px;
-                    height: 6px;
-                    background-color: rgba(61, 207, 182, 1);
-                    border-radius: 50%;
-                }
-            }
-        }
-
-        .navbar-left-content {
-            display: flex;
-            align-items: center;
-            padding-left: 96px;
-        }
-
-        .language-switch {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            border: solid 1px rgba(61, 207, 182, 1);
-            border-radius: 30px;
-            position: relative;
-
-            &:hover {
-                border-color: white;
-            }
-
-            .lang-button {
-                width: 44px;
-                height: 28px;
-                background: transparent;
-                border: none;
-                color: #00ffab;
-                border-radius: 30px;
-                padding: 5px 10px;
-                cursor: pointer;
-                font-family: 'Karla', sans-serif;
-                font-size: 16px;
-                font-weight: 400;
-                transition: background-color 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
-                z-index: 1;
-
-                &.active {
-                    background: rgba(61, 207, 182, 1);
-                    color: white;
-                    position: relative;
-                    z-index: 2;
-                    transform: scale(1.05);
-                }
-
-                &:hover:not(.active) {
-                    transform: scale(1.1);
-                    border-color: white;
-                }
-            }
-
-            .lang-text {
-                display: block;
-            }
-        }
-
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 24px;
-            height: 20px;
-            cursor: pointer;
-
-            .line {
-                width: 100%;
-                height: 2px;
-                background-color: white;
-            }
-        }
-
-        /* POPUP DROPDOWN THAT APPEARS ON BURGER CLICK */
-        .burger-dropdown {
-            position: absolute;
-            top: 80px;
-            right: 16px;
-            background-image: url('../../assets/img/backgrounds/background_first_section.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 16px;
-            border: solid 1px rgba(61, 207, 182, 1);
-            border-radius: 8px;
-            z-index: 9999;
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-
-                li {
-                    margin-bottom: 12px;
-
-                    a {
-                        color: white;
-                        text-decoration: none;
-
-                        &:hover {
-                            color: rgba(61, 207, 182, 1);
-                        }
-                    }
-                }
-            }
-
-            .language-switch {
-                margin-top: 12px;
-            }
-        }
-    }
 
     .hero-content {
         display: flex;
@@ -246,13 +66,11 @@
                 height: 48px;
                 border-radius: 100px;
                 font-family: 'Karla', sans-serif;
-                font-weight: 400;
                 font-size: 18px;
                 line-height: 48px;
-                text-align: center;
-                transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
                 overflow: hidden;
                 position: relative;
+                transition: all 0.3s ease;
             }
 
             .btn-primary:hover,
@@ -263,12 +81,11 @@
 
             .btn-primary span,
             .btn-secondary span {
-                display: inline-block;
-                white-space: nowrap;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -50%) translateX(0);
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
                 transition: transform 0.3s ease;
             }
 
@@ -305,103 +122,6 @@
         }
     }
 
-    // .hero-marquee {
-    //     bottom: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     max-width: 1920px;
-    //     height: 38px;
-    //     background: rgba(255, 255, 255, 0.12);
-    //     backdrop-filter: blur(5.3px);
-    //     font-size: 22px;
-    //     font-weight: 400;
-    //     line-height: 38.4px;
-    //     font-family: 'Karla', sans-serif;
-    //     color: #00ffab;
-    //     overflow: hidden;
-    //     z-index: 999;
-    //     padding: 12px 32px !important;
-    //     transform-origin: left bottom;
-    //     transform: rotate(-3deg);
-
-    //     >div {
-    //         display: flex;
-    //         gap: 100;
-    //         position: relative;
-    //         animation: marqueeScroll 20s linear infinite;
-    //         white-space: nowrap;
-    //     }
-
-    //     >div p {
-    //         margin: 0;
-    //         flex-shrink: 0;
-    //         padding: 0px 64px;
-    //     }
-    // }
-
-    // @keyframes marqueeScroll {
-    //     0% {
-    //         transform: translateX(100%);
-    //     }
-
-    //     100% {
-    //         transform: translateX(-140%);
-    //     }
-    // }
-    .hero-marquee {
-        position: relative;
-        width: 100%;
-        max-width: 1920px;
-        height: 38px;
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(5.3px);
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 38.4px;
-        font-family: 'Karla', sans-serif;
-        color: #00ffab;
-        overflow: hidden;
-        z-index: 999;
-        padding: 12px 32px !important;
-        transform-origin: left bottom;
-        transform: rotate(-3deg);
-      
-        .marquee-track {
-          display: flex;
-          /* Damit die Inhalte nebeneinander stehen */
-          white-space: nowrap;
-          /* Animation: Du verschiebst den gesamten Track */
-          animation: marqueeScroll 20s linear infinite;
-        }
-      
-        .marquee-content {
-          display: flex;
-          align-items: center;
-          /* Abstand zwischen den Elementen innerhalb der Kopie (kann angepasst werden) */
-          gap: 64px;
-          /* Verhindert, dass sich Elemente umbrechen */
-          flex-shrink: 0;
-        }
-      
-        /* Optional: wenn du möchtest, dass die Punkte und Texte etwas Abstand haben */
-        .marquee-content p {
-          margin: 0;
-          padding: 0 16px;
-        }
-      }
-      
-      /* Bei zwei identischen Kopien des Contents verschiebt sich der Track 
-         exakt um 50% der Gesamtbreite, wenn die zweite Kopie an den Anfang 
-         rückt. Passe den Wert -50% ggf. an, falls dein Content breiter/schmaler ist */
-      @keyframes marqueeScroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
     .bottom-section-hero-component {
         display: flex;
         justify-content: space-between;
@@ -411,11 +131,53 @@
 
         .scroll-icon {
             display: flex;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
             gap: 24px;
             margin-left: 96px;
             margin-top: auto;
+
+            .scroll-arrow-container {
+                width: 30px;
+                height: 48px;
+                border: 1px solid rgba(61, 207, 182, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .scroll-arrow {
+                width: 2px;
+                height: 12px;
+                background-color: white;
+                animation: arrowBounce 1s infinite ease-in-out;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 45%;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(225deg);
+                    width: 6px;
+                    height: 6px;
+                    border-left: 2px solid white;
+                    border-top: 2px solid white;
+                }
+            }
+
+            @keyframes arrowBounce {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(5px);
+                }
+            }
         }
 
         .social-links {
@@ -423,48 +185,40 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: start;
             gap: 24px;
             padding-right: 96px;
 
             .rotated-mail {
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
                 transform: rotate(-90deg);
-                width: 100%;
-                height: 22px;
                 gap: 50px;
 
                 a {
                     font-size: 18px;
-                    font-weight: 400;
-                    line-height: 32.6px;
                     font-family: 'Karla', sans-serif;
-                    text-decoration: none;
                     color: white;
+                    text-decoration: none;
 
                     &:hover {
                         color: rgba(61, 207, 182, 1);
-                        cursor: pointer;
                     }
                 }
 
-                img {
-                    display: none;
+                .mail-button img {
+                    transition: all 0.3s;
+                }
+
+                .mail-button img:hover {
+                    transform: scale(1.1);
                 }
             }
 
             .social-icon {
                 width: 44px;
-                padding-left: 11px;
 
                 img {
-                    transition: all 0.3s ease-in-out;
-
-                    &:hover {
-                        transform: scale(1.1);
-                    }
+                    transition: all 0.3s;
                 }
 
                 &.github img:hover {
@@ -478,208 +232,138 @@
         }
     }
 
-    .left-vector {
-        height: 240px;
-        border: solid 1px rgba(61, 207, 182, 1);
-    }
-
-    .right-vector {
-        height: 186px;
-        border: solid 1px white;
-    }
-
-    .scroll-arrow-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 48px;
-        overflow: hidden;
-        border: solid 1px rgba(61, 207, 182, 1);
-        border-radius: 32px;
-        box-sizing: border-box;
-    }
-
-    .scroll-arrow {
+    .hero-marquee {
         position: relative;
-        width: 2px;
-        height: 12px;
-        background-color: rgba(255, 255, 255, 1);
-        margin-top: 0px;
-        animation: arrowBounce 1s ease-in-out infinite;
+        width: 100%;
+        max-width: 1920px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(5.3px);
+        font-size: 22px;
+        font-family: 'Karla', sans-serif;
+        color: #00ffab;
+        overflow: hidden;
+        z-index: 999;
+        padding: 12px 32px !important;
+        transform-origin: left bottom;
+        transform: rotate(-3deg);
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translateX(-50%) rotate(225deg);
-            width: 6px;
-            height: 6px;
-            border-left: 2px solid rgba(255, 255, 255, 1);
-            border-top: 2px solid rgba(255, 255, 255, 1);
+        .marquee-track {
+            display: flex;
+            white-space: nowrap;
+            animation: marqueeScroll 20s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            flex-shrink: 0;
+
+            p {
+                margin: 0;
+                padding: 0 16px;
+            }
         }
     }
 
-    @keyframes arrowBounce {
+    @keyframes marqueeScroll {
+        0% {
+            transform: translateX(0);
+        }
 
-        0%,
         100% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(5px);
+            transform: translateX(-50%);
         }
     }
 }
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-.navbar {
-    position: relative;
-    z-index: 20;
-}
-
-/* MEDIA QUERIES */
+/* Media Queries */
 @media (max-width: 1439px) {
-    .name {
+    .hero .name {
         font-size: 100px !important;
     }
 }
 
 @media (max-width: 1280px) {
-    .logo {
+    .hero .logo {
         padding-right: 16px !important;
     }
 
-    .navbar-left-content {
+    .hero .navbar-left-content {
         padding-left: 16px !important;
     }
 
-    .rotated-mail {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: none !important;
-        padding-bottom: 8px !important;
-
-        a {
-            display: none;
-        }
-
-        img,
-        .mail-button {
-            width: 32px !important;
-            height: auto !important;
-            display: block !important;
-            padding-left: 0 !important;
-
-            &:hover {
-                transform: scale(1.1);
-                width: 44px !important;
-                padding-left: 11px !important;
-                content: url('../../assets/img/icons/mail_icon_hover.svg');
-            }
-        }
+    .hero .rotated-mail a {
+        display: none !important;
     }
 }
 
 @media (max-width: 1024px) {
-    .hero-content {
+    .hero .hero-content {
         padding-top: 118px !important;
     }
+}
 
-    @media (max-width: 845px) {
-        .name {
-            font-size: 100px !important;
-            line-height: 100px !important;
-        }
-    }
-
-    .hero-marquee {
-        padding: 0px 8px !important;
+@media (max-width: 845px) {
+    .hero .name {
+        font-size: 100px !important;
+        line-height: 100px !important;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar-left-content {
+    .hero .navbar-left-content {
         display: none !important;
     }
 
-    .navbar {
-        align-items: flex-start !important;
-        padding-left: 16px;
-        padding-top: 32px;
-    }
-
-    .burger-menu {
+    .hero .burger-menu {
         display: flex !important;
-        padding-right: 16px;
     }
 
-    .logo {
+    .hero .logo {
         visibility: hidden;
     }
 
-    .logo::before {
+    .hero .logo::before {
+        content: 'CK';
         visibility: visible;
-        content: 'PS';
     }
 
-    .job {
+    .hero .job {
         font-size: 24px !important;
     }
 
-    .name {
+    .hero .name {
         font-size: 62px !important;
         line-height: 85px !important;
     }
 
-    .social-links {
-        padding-right: 16px !important;
-    }
-
-    .scroll-icon {
-        margin-left: 16px !important;
-    }
-
-    .hero-content {
+    .hero .hero-content {
         padding-top: 0 !important;
         gap: 0 !important;
-        height: 0px !important;
     }
 
-    .left-vector {
+    .hero .left-vector {
         height: 224px !important;
     }
 
-    .right-vector {
+    .hero .right-vector {
         height: 112px !important;
     }
 }
 
 @media (max-width: 430px) {
-    .name {
+    .hero .name {
         font-size: 42px !important;
     }
 
-    .buttons {
+    .hero .buttons {
         gap: 30px !important;
         width: 310px;
     }
 
-    .social-links {
-        height: 256px;
+    .hero .social-links {
         gap: 12px !important;
     }
 }
