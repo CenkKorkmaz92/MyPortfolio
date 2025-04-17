@@ -6,7 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule, MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { DialogService } from '../../shared/dialog.service'; // Import shared service
+import { DialogService } from '../../shared/dialog.service';
 import { Subscription } from 'rxjs';
 
 @Component({
