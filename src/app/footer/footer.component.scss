@@ -53,26 +53,22 @@
     a {
         text-decoration: none;
     }
-
-    button {
+    button,
+    .legal-notice-link {
         display: flex;
-        border: none;
+        align-items: center;
+        justify-content: center;
+
         background: transparent;
+        border: none;
         color: white;
         font-size: 16px;
         position: relative;
-        transition: transform 0.3s ease;
-
-        &:hover {
-            cursor: pointer;
-            color: rgba(61, 207, 182, 1);
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 4px;
-        }
-
-        &:hover::before {
-            opacity: 1;
-        }
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        transition: transform 0.3s ease,
+            color 0.3s ease,
+            background-color 0.3s ease;
 
         &::before {
             content: "";
@@ -86,6 +82,16 @@
             border-radius: 50%;
             opacity: 0;
             transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: rgba(61, 207, 182, 1);
+            background-color: rgba(255, 255, 255, 0.1);
+
+            &::before {
+                opacity: 1;
+            }
         }
     }
 }
@@ -116,6 +122,7 @@
     transform: rotate(180deg);
     cursor: pointer;
 }
+
 .scroll-arrow {
     position: relative;
     width: 2px;
@@ -123,6 +130,7 @@
     background-color: rgba(255, 255, 255, 1);
     margin-top: 0px;
     animation: arrowBounce 1s ease-in-out infinite;
+
     &::after {
         content: "";
         position: absolute;
@@ -135,11 +143,14 @@
         border-top: 2px solid rgba(255, 255, 255, 1);
     }
 }
+
 @keyframes arrowBounce {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(5px);
     }
@@ -150,6 +161,7 @@
         justify-content: space-around !important;
     }
 }
+
 @media (max-width: 1920px) {
     .footer-section {
         justify-content: space-between !important;
