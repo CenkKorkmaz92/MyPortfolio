@@ -87,7 +87,7 @@ export class ContactComponent {
   showSuccessPopup = false;
 
   post = {
-    endPoint: 'https://philipp-schoenborn.de/sendMail.php',
+    endPoint: 'https://Cenk-Korkmaz.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
