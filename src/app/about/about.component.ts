@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
     EN: {
       WHO_I_AM: 'Who I Am',
       ABOUT_ME: 'About Me',
-      DESCRIPTION: `Hi, I’m a German-speaking Frontend Developer based in Nagold. 
+      DESCRIPTION: `Hi, I’m a German-speaking Frontend Developer based in Sulzbach an der Murr. 
       Motivated by the limitless opportunities within IT, I am excited about crafting visually 
       captivating and intuitive websites and applications.`,
       LOCATION: `Highly focused in terms of working, I can work effectively both remotely and on site.`,
@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
     DE: {
       WHO_I_AM: 'Wer ich bin',
       ABOUT_ME: 'Über mich',
-      DESCRIPTION: `Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus Nagold. 
+      DESCRIPTION: `Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus Sulzbach an der Murr. 
       Durch die unbegrenzten Möglichkeiten in der IT bin ich motiviert, 
       visuell ansprechende und intuitive Webseiten und Anwendungen zu gestalten.`,
       LOCATION: `Ich arbeite sehr fokussiert und kann sowohl remote als auch vor Ort effektiv arbeiten.`,
