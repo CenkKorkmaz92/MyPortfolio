@@ -1,5 +1,5 @@
 <div class="background">
-    <nav id="navbar" class="navbar" [ngClass]="{ 'menu-open': menuOpen }">
+    <nav class="navbar" [ngClass]="{ 'menu-open': menuOpen }" id="navbar">
         <div class="navbar-left-content">
             <div class="language-switch">
                 <button class="lang-button" [ngClass]="{ 'active': selectedLanguage === 'EN' }"
@@ -41,6 +41,4 @@
             </div>
         </div>
     </nav>
-
-    <div class="overlay" *ngIf="menuOpen" (click)="menuOpen = false"></div>
 </div>

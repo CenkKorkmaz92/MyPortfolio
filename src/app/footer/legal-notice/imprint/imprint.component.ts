@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from '../../../language.service'; // Adjust path as needed
+import { LanguageService } from '../../../language.service';
 
 @Component({
   selector: 'app-imprint',
@@ -17,8 +17,8 @@ export class ImprintComponent implements OnInit {
       heading1: 'Imprint',
       heading2: 'Information acc. to § 5 TMG',
       block2: `
-       <p>
-       Cenk Korkmaz<br>
+        <p>
+          Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr
         </p>
@@ -26,7 +26,7 @@ export class ImprintComponent implements OnInit {
       heading3: 'Contact',
       block3: `
         <p>
-          Phone: +49 (0) 173 437 605 7<br>
+          Phone: +49 (0) 15734376057<br>
           Email:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
             Cenk.Korkmaz92&#64;gmail.com
@@ -36,7 +36,7 @@ export class ImprintComponent implements OnInit {
       heading4: 'Editorially Responsible',
       block4: `
       <p>
-       Cenk Korkmaz<br>
+          Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr
         </p>
@@ -62,15 +62,15 @@ export class ImprintComponent implements OnInit {
       heading2: 'Angaben gemäß § 5 TMG',
       block2: `
         <p>
-       Cenk Korkmaz<br>
+          Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr
         </p>
       `,
       heading3: 'Kontakt',
       block3: `
-        <p>
-          Phone: +49 (0) 173 437 605 7<br>
+         <p>
+          Phone: +49 (0) 15734376057<br>
           Email:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
             Cenk.Korkmaz92&#64;gmail.com
@@ -80,7 +80,7 @@ export class ImprintComponent implements OnInit {
       heading4: 'Redaktionell verantwortlich',
       block4: `
       <p>
-       Cenk Korkmaz<br>
+          Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr
         </p>
@@ -103,10 +103,15 @@ export class ImprintComponent implements OnInit {
     },
   };
 
-  constructor(private languageService: LanguageService) { }
+  constructor(
+    private languageService: LanguageService
+  ) { }
 
+  /**
+   * Lifecycle hook that is called after Angular has initialized all data-bound properties.
+   * Subscribes to the language service to update the selected language whenever it changes.
+   */
   ngOnInit(): void {
-    // Subscribe so we know when the user changes the language
     this.languageService.language$.subscribe(lang => {
       this.selectedLanguage = lang;
     });

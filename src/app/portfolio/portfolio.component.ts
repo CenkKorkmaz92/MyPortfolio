@@ -4,15 +4,19 @@ import { Project } from './project.model';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import { LanguageService } from '../language.service';
 
+/**
+ * PortfolioComponent displays a collection of featured projects.
+ * It allows users to open a modal with detailed information about each project
+ * and navigate between different projects.
+ */
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, ProjectModalComponent], // Import the standalone modal
+  imports: [CommonModule, ProjectModalComponent],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent {
-  // Translations for the portfolio and modal
   translations = {
     EN: {
       PORTFOLIO: 'Portfolio',
@@ -40,9 +44,17 @@ export class PortfolioComponent {
     },
   };
 
-  selectedLanguage: 'EN' | 'DE' = 'EN'; // Track the selected language
-  selectedProject: Project | null = null; // Currently selected project
+  selectedLanguage: 'EN' | 'DE' = 'EN';
 
+  /**
+   * The project that is currently selected to be displayed in the modal.
+   * If no project is selected, this value is null.
+   */
+  selectedProject: Project | null = null;
+
+  /**
+   * A list of featured projects to display on the portfolio page.
+   */
   projects: Project[] = [
     {
       id: 1,
@@ -57,7 +69,7 @@ export class PortfolioComponent {
       },
       technologies: ['CSS', 'HTML', 'Firebase', 'Angular', 'TypeScript'],
       githubLink: 'https://github.com/CenkKorkmaz92/Join',
-      liveLink: 'https://cenk-korkmaz.com/join',
+      liveLink: 'https://cenk-korkmaz.com/join/index.html',
       imageUrl: 'assets/img/pop-ups/join_pop_up.svg',
       modalImageUrl: 'assets/img/pop-ups/modal_join.svg',
     },
@@ -74,7 +86,7 @@ export class PortfolioComponent {
       },
       technologies: ['JavaScript', 'HTML', 'CSS'],
       githubLink: 'https://github.com/PhilippSchoenborn/El_Pollo_Loco_Phil_Cenk',
-      liveLink: 'https://cenk-korkmaz.com/El_Pollo_Loco_Phil_Cenk',
+      liveLink: 'https://cenk-korkmaz.com/El_Pollo_Loco_Phil_Cenk/index.html',
       imageUrl: 'assets/img/pop-ups/el_pollo_loco_pop_up.svg',
       modalImageUrl: 'assets/img/pop-ups/modal_loco.svg',
     },
@@ -97,24 +109,42 @@ export class PortfolioComponent {
     // },
   ];
 
+  /**
+   * The constructor for PortfolioComponent.
+   * @param languageService The LanguageService to manage language selection.
+   */
   constructor(private languageService: LanguageService) { }
 
+  /**
+   * Initializes the component by subscribing to the language service to update the selected language.
+   */
   ngOnInit(): void {
     this.languageService.language$.subscribe((lang) => {
       this.selectedLanguage = lang;
     });
   }
 
+  /**
+   * Opens the modal for the given project and prevents body scrolling when the modal is open.
+   * @param project The project to display in the modal.
+   */
   openModal(project: Project) {
     this.selectedProject = project;
     document.body.classList.add('no-scroll');
   }
 
+  /**
+   * Closes the modal and restores body scrolling.
+   */
   closeModal() {
     this.selectedProject = null;
     document.body.classList.remove('no-scroll');
   }
 
+  /**
+   * Displays the next project in the list by finding the next project based on the current one.
+   * Loops back to the first project when the last one is reached.
+   */
   nextProject() {
     if (this.selectedProject) {
       let currentIndex = this.projects.findIndex(

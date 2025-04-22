@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LanguageService } from '../language.service';
-import { DialogService } from '../shared/dialog.service'; // Import the DialogService
+import { DialogService } from '../shared/dialog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  // The critical part: make sure HttpClientModule is in the imports array.
   imports: [
     CommonModule,
     FormsModule,
@@ -19,9 +19,8 @@ import { DialogService } from '../shared/dialog.service'; // Import the DialogSe
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  // =============== Existing from your old code ===============
   selectedLanguage: 'EN' | 'DE' = 'EN';
-
+  private router = inject(Router);
   translations = {
     EN: {
       TITLE: 'Contact me',
@@ -69,25 +68,28 @@ export class ContactComponent {
     },
   };
 
-  // =============== New additions ===============
-  http = inject(HttpClient); // Angular's "inject" function
+  /** Injected HttpClient for making requests */
+  http = inject(HttpClient);
 
-  // For template-driven form fields
+  /** Model for contact form input */
   contactData = {
     name: '',
     email: '',
     message: '',
   };
 
-  // For the privacy checkbox
+  /** Whether the privacy policy is accepted */
   acceptTerms = false;
 
-  // Toggle: true = test mode (no real HTTP post), false = live
+  /** Test mode toggle (e.g. prevents real mail submission) */
   mailTest = false;
+
+  /** Controls display of success popup */
   showSuccessPopup = false;
 
+  /** Request configuration for sending form data */
   post = {
-    endPoint: 'https://Cenk-Korkmaz.com/sendMail.php',
+    endPoint: 'https://cenk-korkmaz.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -97,21 +99,39 @@ export class ContactComponent {
     },
   };
 
+  /**
+   * Creates an instance of ContactComponent.
+   * @param languageService Service for managing current language
+   * @param dialogService Service for showing dialogs (not used in current code)
+   */
   constructor(
     private languageService: LanguageService,
     private dialogService: DialogService
-  ) {}
+  ) { }
 
+  /**
+   * Initializes the component, subscribing to language changes.
+   */
   ngOnInit(): void {
     this.languageService.language$.subscribe((lang) => {
       this.selectedLanguage = lang;
     });
   }
 
+  /**
+   * Updates the currently selected language.
+   * @param language Language to set ('EN' or 'DE')
+   */
   setLanguage(language: 'EN' | 'DE') {
     this.languageService.setLanguage(language);
   }
 
+  /**
+   * Handles contact form submission.
+   * Sends data if form is valid and not in test mode.
+   * Displays success popup and resets form.
+   * @param contactForm The Angular NgForm instance
+   */
   onSubmit(contactForm: NgForm) {
     if (contactForm.submitted && contactForm.form.valid && !this.mailTest) {
       this.http
@@ -132,15 +152,17 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (contactForm.submitted && contactForm.form.valid && this.mailTest) {
-      console.log('mailTest=true. Skipping request. Resetting form...');
+      // console.log('mailTest=true. Skipping request. Resetting form...');
       contactForm.resetForm();
       this.displaySuccessPopup();
     } else {
-      console.log('Form is invalid or not yet submitted');
+      // console.log('Form is invalid or not yet submitted');
     }
   }
 
-
+  /**
+   * Displays a temporary success popup for 3 seconds.
+   */
   displaySuccessPopup() {
     this.showSuccessPopup = true;
     setTimeout(() => {
@@ -148,9 +170,13 @@ export class ContactComponent {
     }, 3000);
   }
 
-  // New method to open the Data Protection dialog via the DialogService
-  openDataProtection() {
-    this.dialogService.openDataProtection();
+  /**
+   * Navigates to the legal notice/data protection page.
+   * @param event MouseEvent from the link click
+   */
+  openDataProtection(event: MouseEvent): void {
+    event.preventDefault();
+    this.router.navigate(['/legal-notice']);
   }
 
 }

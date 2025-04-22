@@ -1,6 +1,6 @@
 .background {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .background::before {
@@ -126,6 +126,7 @@
     justify-content: space-between;
     width: 24px;
     height: 20px;
+    margin-right: 15px;
     cursor: pointer;
 
     .line {
@@ -180,7 +181,6 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive rules if you need the burger at smaller widths */
 @media (max-width: 768px) {
     .navbar-left-content {
         display: none;
@@ -188,5 +188,10 @@
 
     .burger-menu {
         display: flex;
+    }
+
+    .logo {
+        padding-right: 0;
+        margin-left: 15px;
     }
 }

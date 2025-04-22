@@ -6,6 +6,7 @@
     padding-top: 144px;
     width: 100%;
     gap: 60px;
+    font-size: 16px;
 }
 
 .left-contact-form {
@@ -65,7 +66,7 @@
 
 .error-text {
     color: #ff4b4b !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-family: 'Karla', sans-serif;
 }
 
@@ -77,7 +78,7 @@
 
 .single-input-frame .error-text {
     color: #ff4b4b;
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 12px;
 }
 
@@ -96,12 +97,13 @@
         justify-content: center;
     }
 
-    label {
-        pointer-events: none;
-    }
+    /* Entfernt – nicht mehr nötig */
+    // label {
+    //   pointer-events: none;
+    // }
 
-    span {
-        pointer-events: visible;
+    a {
+        pointer-events: auto;
     }
 }
 
@@ -150,7 +152,8 @@
     transition: border 0.3s;
 }
 
-.checkbox-container label:hover::before {
+/* Neue Bedingung: Nur wenn NICHT über den Link gehovert wird */
+.checkbox-container label:hover:not(:has(a:hover))::before {
     background: rgba(0, 255, 204, 0.2);
     border-radius: 50%;
 }
@@ -258,6 +261,17 @@
 .color {
     color: rgba(61, 207, 182, 1);
     font-weight: 700;
+    text-decoration: none;
+}
+
+.color-link {
+    color: rgba(61, 207, 182, 1);
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 h3 {
