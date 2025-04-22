@@ -1,10 +1,10 @@
 <div class="button-legal-notice">
   <div class="buttons">
     <button (click)="openDataProtection()" class="btn-primary">
-      <span>Data Protection</span>
+      <span>{{ translations[selectedLanguage].dataProtection }}</span>
     </button>
     <button (click)="openImprint()" class="btn-secondary">
-      <span>Imprint</span>
+      <span>{{ translations[selectedLanguage].imprint }}</span>
     </button>
   </div>
 </div>
