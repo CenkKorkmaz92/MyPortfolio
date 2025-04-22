@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../../language.service';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-imprint',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './imprint.component.html',
   styleUrls: ['./imprint.component.scss']
 })
@@ -104,16 +105,21 @@ export class ImprintComponent implements OnInit {
   };
 
   constructor(
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private router: Router,
+    private route: ActivatedRoute,   // ← if you later want to read/merge params
   ) { }
 
-  /**
-   * Lifecycle hook that is called after Angular has initialized all data-bound properties.
-   * Subscribes to the language service to update the selected language whenever it changes.
-   */
   ngOnInit(): void {
     this.languageService.language$.subscribe(lang => {
       this.selectedLanguage = lang;
     });
+  }
+
+  goBackToLegalNotice(): void {
+    this.router.navigate(
+      ['/legal-notice'],
+      { queryParams: { lang: this.selectedLanguage } }
+    );
   }
 }
