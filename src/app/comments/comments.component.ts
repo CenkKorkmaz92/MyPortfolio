@@ -38,7 +38,7 @@ export class CommentsComponent {
         EN: "I had the good fortune of working with Cenk in a group project at the Developer Akademie that involved a lot of effort. He always stayed calm, cool, and focused, and made sure our team was set up for success. He's super knowledgeable, easy to work with, and I'd happily work with him again given the chance.",
         DE: "Ich hatte das Glück, mit Cenk an einem Gruppenprojekt bei der Developer Akademie zu arbeiten, das viel Einsatz erforderte. Er blieb immer ruhig, konzentriert und sorgte dafür, dass unser Team erfolgreich war. Er ist äußerst kompetent, es ist leicht mit ihm zu arbeiten und ich würde jederzeit wieder mit ihm arbeiten.",
       },
-      author: "R. H.",
+      author: "R. Horn",
       role: "Frontend Developer",
     },
   ];

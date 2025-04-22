@@ -1,35 +1,31 @@
 <footer class="main-container" id="footer">
     <div class="footer-section">
         <div class="font-karla">
-            <h2 class="logo logo-footer" (click)="scrollToNavbar()">Cenk<br />Korkmaz</h2>
+            <h2 class="logo logo-footer" (click)="scrollToNavbar()">Cenk<br>Korkmaz</h2>
             <div class="info">
-                <span>{{ translations[selectedLanguage].webDeveloper }}</span><br />
-                <span>{{ translations[selectedLanguage].location }}</span>
+                <span>{{ translations[selectedLanguage].FOOTER_JOB }}</span><br>
+                <span>Sulzbach an der Murr, <br>{{ translations[selectedLanguage].FOOTER_COUNTRY }}</span>
             </div>
         </div>
-
         <div class="copyright font-fira visible-copyright">
             <span>&#169; Cenk Korkmaz 2025</span>
         </div>
-
         <div class="social-links font-karla">
-            <div class="scroll-arrow-container" (click)="scrollToNavbar()"
-                [attr.aria-label]="translations[selectedLanguage].scrollToTop">
+            <div class="scroll-arrow-container" *ngIf="!hideFooterExtras()" (click)="scrollToNavbar()">
                 <div class="scroll-arrow"></div>
             </div>
-
             <a href="https://github.com/CenkKorkmaz92" target="_blank" rel="noopener">
-                <button type="button">{{ translations[selectedLanguage].github }}</button>
+                <button type="button">GitHub</button>
             </a>
-            <a href="https://www.linkedin.com/in/cenk-korkmaz-2731072a5" target="_blank" rel="noopener">
-                <button type="button">{{ translations[selectedLanguage].linkedin }}</button>
+            <a href="https:/www.linkedin.com/in/cenk-korkmaz-2731072a5" target="_blank" rel="noopener">
+                <button type="button">LinkedIn</button>
             </a>
-            <a routerLink="/legal-notice" routerLinkActive="active" class="legal-notice-link font-karla">
-                {{ translations[selectedLanguage].legalNotice }}
+            <a routerLink="/legal-notice" routerLinkActive="active" class="legal-notice-link font-karla"
+                *ngIf="!hideFooterExtras()">
+                {{ translations[selectedLanguage].FOOTER_LEGAL }}
             </a>
         </div>
     </div>
-
     <div class="copyright font-fira hidden-copyright">
         <span>&#169; Cenk Korkmaz 2025</span>
     </div>

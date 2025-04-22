@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LanguageService } from '../language.service';
+import { Router } from '@angular/router';
 
+/**
+ * FooterComponent displays the footer section of the application.
+ * It provides functionality to scroll smoothly to the navigation bar.
+ */
 @Component({
   selector: 'app-footer',
   standalone: true,
@@ -10,35 +15,35 @@ import { LanguageService } from '../language.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   selectedLanguage: 'EN' | 'DE' = 'EN';
-
   translations = {
     EN: {
-      webDeveloper: 'Web Developer',
-      location: 'Sulzbach an der Murr, Germany',
-      legalNotice: 'Legal Notice',
-      scrollToTop: 'Scroll to top',
-      github: 'GitHub',
-      linkedin: 'LinkedIn',
+      FOOTER_JOB: 'Web Developer',
+      FOOTER_COUNTRY: 'Germany',
+      FOOTER_LEGAL: 'Legal Notice',
     },
     DE: {
-      webDeveloper: 'Webentwickler',
-      location: 'Sulzbach an der Murr, Deutschland',
-      legalNotice: 'Impressum',
-      scrollToTop: 'Nach oben',
-      github: 'GitHub',
-      linkedin: 'LinkedIn',
-    },
+      FOOTER_JOB: 'Webentwickler',
+      FOOTER_COUNTRY: 'Deutschland',
+      FOOTER_LEGAL: 'Impressum',
+    }
   };
 
   /**
-   * @param languageService keeps track of the current UI language
-   */
-  constructor(private languageService: LanguageService) { }
+ * Creates an instance of HeroComponent.
+ * @param languageService The service that handles language selection and switching.
+ */
+  constructor(private languageService: LanguageService, public router: Router) { }
+
+  hideFooterExtras(): boolean {
+    const hiddenRoutes = ['/legal-notice'];
+    return hiddenRoutes.includes(this.router.url);
+  }
 
   /**
-   * Subscribe to language changes so we update the footer automatically.
+   * Lifecycle hook called when the component is initialized.
+   * Subscribes to the language service to update the selected language dynamically.
    */
   ngOnInit(): void {
     this.languageService.language$.subscribe(lang => {
@@ -47,21 +52,13 @@ export class FooterComponent implements OnInit {
   }
 
   /**
-   * Programmatically switch the language (if you ever expose a UI for it here).
-   * @param language 'EN' or 'DE'
+   * Scrolls the page smoothly to the navbar element when invoked.
+   * If the navbar element is not found, a warning message is logged to the console.
    */
-  setLanguage(language: 'EN' | 'DE'): void {
-    this.languageService.setLanguage(language);
-  }
-
-  /**
-   * Scrolls smoothly to the navbar element.
-   * If the element isn’t found, logs a warning.
-   */
-  scrollToNavbar(): void {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-      navbar.scrollIntoView({ behavior: 'smooth' });
+  scrollToNavbar() {
+    const heroElement = document.getElementById('navbar');
+    if (heroElement) {
+      heroElement.scrollIntoView({ behavior: 'smooth' });
     } else {
       console.warn('navbar element not found!');
     }

@@ -26,16 +26,16 @@ export class ImprintComponent implements OnInit {
       heading3: 'Contact',
       block3: `
         <p>
-          Phone: +49 (0) 15734376057<br>
-          Email:
+          Telefon: +49 (0) 1734376057<br>
+          E-Mail:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
-            Cenk.Korkmaz92&#64;gmail.com
+            Cenk.Korkmaz92&#64;gmail.com.de
           </a>
         </p>
       `,
       heading4: 'Editorially Responsible',
       block4: `
-      <p>
+       <p>
           Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr
@@ -69,17 +69,17 @@ export class ImprintComponent implements OnInit {
       `,
       heading3: 'Kontakt',
       block3: `
-         <p>
-          Phone: +49 (0) 15734376057<br>
-          Email:
+        <p>
+          Telefon: +49 (0) 1734376057<br>
+          E-Mail:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
-            Cenk.Korkmaz92&#64;gmail.com
+            Cenk.Korkmaz92&#64;gmail.com.de
           </a>
         </p>
       `,
       heading4: 'Redaktionell verantwortlich',
       block4: `
-      <p>
+       <p>
           Cenk Korkmaz<br>
           Kleinhöchbergerstraße 45<br>
           71560 Sulzbach an der Murr

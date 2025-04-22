@@ -87,7 +87,7 @@ export class PortfolioComponent {
       technologies: ['JavaScript', 'HTML', 'CSS'],
       githubLink: 'https://github.com/PhilippSchoenborn/El_Pollo_Loco_Phil_Cenk',
       liveLink: 'https://cenk-korkmaz.com/El_Pollo_Loco_Phil_Cenk/index.html',
-      imageUrl: 'assets/img/pop-ups/el_pollo_loco_pop_up.svg',
+      imageUrl: 'assets/img/pop-ups/el_pollo_loco.svg',
       modalImageUrl: 'assets/img/pop-ups/modal_loco.svg',
     },
     // {

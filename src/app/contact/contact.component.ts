@@ -89,7 +89,7 @@ export class ContactComponent {
 
   /** Request configuration for sending form data */
   post = {
-    endPoint: 'https://cenk-korkmaz.com/sendMail.php',
+    endPoint: 'https://philipp-schoenborn.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -124,6 +124,9 @@ export class ContactComponent {
    */
   setLanguage(language: 'EN' | 'DE') {
     this.languageService.setLanguage(language);
+    const currentUrl = this.router.url.split('?')[0];
+    const newUrl = `/${language}${currentUrl}`;
+    this.router.navigateByUrl(newUrl);
   }
 
   /**
@@ -142,7 +145,7 @@ export class ContactComponent {
         )
         .subscribe({
           next: (response) => {
-            console.log('Response', response);
+            // console.log('Response', response);
             contactForm.resetForm();
             this.displaySuccessPopup();
           },
