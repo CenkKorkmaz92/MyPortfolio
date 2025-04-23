@@ -1,4 +1,4 @@
-import { Component }      from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet }   from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -14,7 +14,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   template: 
     `<app-header></app-header>
@@ -22,4 +23,13 @@ import { FooterComponent } from './footer/footer.component';
      <app-footer></app-footer>`
   
 })
-export class AppComponent {}
+export class AppComponent {
+   cursorX = 0;
+    cursorY = 0;
+  
+    @HostListener('document:mousemove', ['$event'])
+    onMouseMove(e: MouseEvent) {
+      this.cursorX = e.clientX;
+      this.cursorY = e.clientY;
+    }
+}

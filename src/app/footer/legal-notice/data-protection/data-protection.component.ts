@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, HostListener } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../../../language.service';
 
@@ -8,7 +8,7 @@ import { LanguageService } from '../../../language.service';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule 
+    RouterModule,
   ],
   templateUrl: './data-protection.component.html',
   styleUrls: ['./data-protection.component.scss']
@@ -261,5 +261,14 @@ export class DataProtectionComponent implements AfterViewInit, OnInit {
       queryParams: { lang: language },
       replaceUrl: true,
     });
+  }
+
+  cursorX = 0;
+  cursorY = 0;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.cursorX = e.clientX;
+    this.cursorY = e.clientY;
   }
 }

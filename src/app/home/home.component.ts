@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../hero/hero.component';
 import { AboutComponent } from '../about/about.component';
@@ -8,10 +8,10 @@ import { CommentsComponent } from '../comments/comments.component';
 import { ContactComponent } from '../contact/contact.component';
 
 /**
- * HomeComponent serves as the main container for the portfolio page.
- * It integrates several child components such as Hero, About, Skills, Portfolio, Comments, and Contact.
- * This component manages the overall structure of the home page, including setting the page title and language.
- */
+ 
+HomeComponent serves as the main container for the portfolio page.
+It integrates several child components such as Hero, About, Skills, Portfolio, Comments, and Contact.
+This component manages the overall structure of the home page, including setting the page title and language.*/
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -30,4 +30,13 @@ import { ContactComponent } from '../contact/contact.component';
 export class HomeComponent {
   title = 'portfolio';
   selectedLanguage: 'en' | 'de' = 'en';
+  cursorX = 0;
+  cursorY = 0;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.cursorX = e.clientX;
+    this.cursorY = e.clientY;
+  }
+
 }
