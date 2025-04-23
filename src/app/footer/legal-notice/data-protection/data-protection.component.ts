@@ -239,18 +239,30 @@ export class DataProtectionComponent implements AfterViewInit, OnInit {
   ngAfterViewInit(): void {
     const top = document.getElementById('top');
     if (top) {
-      top.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const elementPosition = top.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 98;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 
   /**
    * Navigates back to the legal notice page with the selected language as a query parameter.
    */
+  // data-protection.component.ts
   goBackToLegalNotice(): void {
-    this.router.navigate(
-      ['/'],
-      { queryParams: { lang: this.selectedLanguage } }
-    );
+    this.router
+      .navigate(['/'], { queryParams: { lang: this.selectedLanguage } })
+      .then(() => {
+        setTimeout(() => {
+          const contact = document.getElementById('contact');
+          if (contact) {
+            contact.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 0);
+      });
   }
 
   setLanguage(language: 'EN' | 'DE'): void {

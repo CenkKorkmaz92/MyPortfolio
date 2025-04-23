@@ -36,10 +36,10 @@ export class FooterComponent {
  */
   constructor(private languageService: LanguageService, public router: Router) { }
 
-  hideFooterExtras(): boolean {
-    const hiddenRoutes = ['/legal-notice'];
-    return hiddenRoutes.includes(this.router.url);
-  }
+hideFooterExtras(): boolean {
+  return this.router.url.startsWith('/legal-notice/imprint');
+}
+
 
   /**
    * Lifecycle hook called when the component is initialized.

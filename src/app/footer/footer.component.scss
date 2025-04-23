@@ -12,7 +12,7 @@
     color: white;
     width: 95%;
     height: 126px;
-    padding-top: 144px;
+    padding-top: 80px;
     padding-bottom: 44px;
     display: flex;
     justify-content: space-between;
@@ -182,6 +182,6 @@
 
     .logo::before {
         visibility: visible;
-        content: 'PS';
+        content: 'CK';
     }
 }
