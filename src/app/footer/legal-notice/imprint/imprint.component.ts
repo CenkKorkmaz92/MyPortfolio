@@ -30,7 +30,7 @@ export class ImprintComponent implements OnInit {
           Telefon: +49 (0) 1734376057<br>
           E-Mail:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
-            Cenk.Korkmaz92&#64;gmail.com.de
+            Cenk.Korkmaz92&#64;gmail.com
           </a>
         </p>
       `,
@@ -74,7 +74,7 @@ export class ImprintComponent implements OnInit {
           Telefon: +49 (0) 1734376057<br>
           E-Mail:
           <a href="mailto:Cenk.Korkmaz92@gmail.com">
-            Cenk.Korkmaz92&#64;gmail.com.de
+            Cenk.Korkmaz92&#64;gmail.com
           </a>
         </p>
       `,

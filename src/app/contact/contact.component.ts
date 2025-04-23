@@ -89,7 +89,7 @@ export class ContactComponent {
 
   /** Request configuration for sending form data */
   post = {
-    endPoint: 'https://philipp-schoenborn.de/sendMail.php',
+    endPoint: 'https://cenk-korkmaz.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
