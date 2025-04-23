@@ -8,7 +8,7 @@ import { LanguageService } from '../../../language.service';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule       // ← only needed if you use [routerLink] in your template
+    RouterModule 
   ],
   templateUrl: './data-protection.component.html',
   styleUrls: ['./data-protection.component.scss']
@@ -248,7 +248,7 @@ export class DataProtectionComponent implements AfterViewInit, OnInit {
    */
   goBackToLegalNotice(): void {
     this.router.navigate(
-      ['/legal-notice'],
+      ['/'],
       { queryParams: { lang: this.selectedLanguage } }
     );
   }
