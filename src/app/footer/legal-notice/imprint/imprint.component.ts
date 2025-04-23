@@ -3,6 +3,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { LanguageService } from '../../../language.service';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 
+/**
+ * Component displaying the legal imprint and handling language selection and cursor tracking.
+ */
 @Component({
   selector: 'app-imprint',
   standalone: true,
@@ -11,17 +14,16 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./imprint.component.scss']
 })
 export class ImprintComponent implements OnInit {
+  /** Current X-coordinate of the cursor. */
   cursorX = 0;
+
+  /** Current Y-coordinate of the cursor. */
   cursorY = 0;
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(e: MouseEvent) {
-    this.cursorX = e.clientX;
-    this.cursorY = e.clientY;
-  }
-
+  /** Currently selected language (English or German). */
   selectedLanguage: 'EN' | 'DE' = 'EN';
 
+  /** Translations for imprint content in supported languages. */
   translations = {
     EN: {
       heading1: 'Imprint',
@@ -113,18 +115,39 @@ export class ImprintComponent implements OnInit {
     },
   };
 
+  /**
+   * @param languageService Service for tracking and updating app language.
+   * @param router Router instance for navigation.
+   * @param route ActivatedRoute for handling route parameters.
+   */
   constructor(
     private languageService: LanguageService,
     private router: Router,
-    private route: ActivatedRoute,   // ← if you later want to read/merge params
+    private route: ActivatedRoute
   ) { }
 
+  /**
+   * Subscribe to language changes on component initialization.
+   */
   ngOnInit(): void {
     this.languageService.language$.subscribe(lang => {
       this.selectedLanguage = lang;
     });
   }
 
+  /**
+   * Update cursor coordinates whenever the mouse moves.
+   * @param event Mouse move event.
+   */
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent): void {
+    this.cursorX = event.clientX;
+    this.cursorY = event.clientY;
+  }
+
+  /**
+   * Navigate back to the legal notice (home) with the current language.
+   */
   goBackToLegalNotice(): void {
     this.router.navigate(
       ['/'],
